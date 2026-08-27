@@ -1,0 +1,181 @@
+{
+    "id": 3222917271,
+    "nickname": "CF20260223203637",
+    "registration_date": "2026-02-23T20:36:37.116-04:00",
+    "first_name": "Guilherme Do",
+    "last_name": "Carmo Galdino",
+    "gender": "",
+    "country_id": "BR",
+    "email": "controlafaciluscs@gmail.com",
+    "identification": {
+        "number": "52839479800",
+        "type": "CPF"
+    },
+    "address": {
+        "address": null,
+        "city": null,
+        "state": null,
+        "zip_code": null
+    },
+    "phone": {
+        "area_code": "",
+        "extension": "",
+        "number": "",
+        "verified": false
+    },
+    "alternative_phone": {
+        "area_code": "",
+        "extension": "",
+        "number": ""
+    },
+    "user_type": "normal",
+    "tags": [
+        "messages_as_seller",
+        "normal"
+    ],
+    "logo": null,
+    "points": 0,
+    "site_id": "MLB",
+    "permalink": "http://perfil.mercadolivre.com.br/CF20260223203637",
+    "seller_experience": "NEWBIE",
+    "bill_data": {
+        "accept_credit_note": null
+    },
+    "seller_reputation": {
+        "level_id": null,
+        "power_seller_status": null,
+        "transactions": {
+            "canceled": 0,
+            "completed": 0,
+            "period": "historic",
+            "ratings": {
+                "negative": 0,
+                "neutral": 0,
+                "positive": 0
+            },
+            "total": 0
+        },
+        "metrics": {
+            "sales": {
+                "period": "365 days",
+                "completed": 0
+            },
+            "claims": {
+                "period": "365 days",
+                "rate": 0,
+                "value": 0
+            },
+            "delayed_handling_time": {
+                "period": "365 days",
+                "rate": 0,
+                "value": 0
+            },
+            "cancellations": {
+                "period": "365 days",
+                "rate": 0,
+                "value": 0
+            }
+        }
+    },
+    "buyer_reputation": {
+        "canceled_transactions": 0,
+        "tags": null,
+        "transactions": {
+            "canceled": {
+                "paid": null,
+                "total": null
+            },
+            "completed": null,
+            "not_yet_rated": {
+                "paid": null,
+                "total": null,
+                "units": null
+            },
+            "period": "",
+            "total": null,
+            "unrated": {
+                "paid": null,
+                "total": null
+            }
+        }
+    },
+    "status": {
+        "billing": {
+            "allow": false,
+            "codes": [
+                "address_pending"
+            ]
+        },
+        "buy": {
+            "allow": true,
+            "codes": [],
+            "immediate_payment": {
+                "reasons": [],
+                "required": false
+            }
+        },
+        "confirmed_email": true,
+        "shopping_cart": {
+            "buy": "allowed",
+            "sell": "allowed"
+        },
+        "immediate_payment": false,
+        "list": {
+            "allow": false,
+            "codes": [
+                "address_pending"
+            ],
+            "immediate_payment": {
+                "reasons": [],
+                "required": false
+            }
+        },
+        "mercadoenvios": "not_accepted",
+        "mercadopago_account_type": "personal",
+        "mercadopago_tc_accepted": true,
+        "required_action": "",
+        "sell": {
+            "allow": true,
+            "codes": [],
+            "immediate_payment": {
+                "reasons": [],
+                "required": false
+            }
+        },
+        "site_status": "active",
+        "user_type": null
+    },
+    "secure_email": "hachfeb.3222917271@mail.mercadolivre.com",
+    "company": {
+        "brand_name": "",
+        "city_tax_id": "",
+        "corporate_name": "",
+        "identification": "",
+        "state_tax_id": "",
+        "cust_type_id": "CO",
+        "soft_descriptor": ""
+    },
+    "credit": {
+        "consumed": 0,
+        "credit_level_id": "MLB5",
+        "rank": "newbie"
+    },
+    "context": {
+        "device": "WEB",
+        "flow": "registration-social-marketplace",
+        "ip_address": "189.40.74.199",
+        "source": "mercadolibre-aurora"
+    },
+    "registration_identifiers": [
+        {
+            "user_identifier": "5511975383498",
+            "registration_type": "phone_identifier",
+            "creation_date": "2026-02-23T20:36:48-04:00",
+            "last_updated": "2026-02-23T20:36:48-04:00",
+            "metadata": {
+                "country_code": "55",
+                "number": "11975383498"
+            }
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+[
+    {
+        "tipo": "vendedor",
+        "id": 3430803000,
+        "email": "test_user_5857902706674993353@testuser.com",
+        "nickname": "TESTUSER5857902706674993353",
+        "site_status": "active",
+        "password": "27ODhTgs6e"
+    },
+    {
+        "tipo": "comprador",
+        "id": 3451172586,
+        "email": "test_user_414874442405789300@testuser.com",
+        "nickname": "TESTUSER414874442405789300",
+        "site_status": "active",
+        "password": "pBY1cBqnLm"
+    },
+    {
+        "tipo": "comprador",
+        "id": 3451278614,
+        "email": "test_user_7958358133182070041@testuser.com",
+        "nickname": "TESTUSER7958358133182070041",
+        "site_status": "active",
+        "password": "g9NCl4vH9I"
+    },
+    {
+        "tipo": "comprador",
+        "id": 3451278616,
+        "email": "test_user_5647017430211115594@testuser.com",
+        "nickname": "TESTUSER5647017430211115594",
+        "site_status": "active",
+        "password": "IShr0DjNG0"
+    },
+    {
+        "id": 3451278618,
+        "email": "test_user_2370558722601683491@testuser.com",
+        "nickname": "TESTUSER2370558722601683491",
+        "site_status": "active",
+        "password": "wEIYWLHPCd"
+    }
+]

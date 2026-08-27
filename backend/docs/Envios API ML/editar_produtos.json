@@ -1,0 +1,28 @@
+{
+  "title":"Item de test - No Ofertar - teclado mecanico teste",
+  "price":350,
+  "condition":"new",
+  "pictures":[
+     {
+        "source":"https://http2.mlstatic.com/D_Q_NP_989014-MLA99484846212_112025-R.webp"
+     }
+  ],
+  "attributes":[
+     {
+        "id":"BRAND",
+        "value_name":"Redragon"
+     },
+     {
+        "id":"MODEL",
+        "value_name":"Mitra K551"
+     },
+     {
+        "id":"GTIN",
+        "value_name":"Não se aplica"
+     },
+     {
+        "id":"SELLER_SKU",
+        "value_name":"TM-001"
+     }
+  ]
+}

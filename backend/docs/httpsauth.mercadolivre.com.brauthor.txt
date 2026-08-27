@@ -1,0 +1,4 @@
+https://auth.mercadolivre.com.br/authorization?response_type=code&client_id=1014544177493757&redirect_uri=https://guigaldino.github.io/Aplicacao-Teste/FrontEnd/index.html
+
+
+TG-69ac66973bbc5a0001945dd6-3222917271

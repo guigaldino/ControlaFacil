@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Integração Mercado Livre</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --primary-hover: #2980b9;
+            --bg: #f8f9fa;
+            --text: #2c3e50;
+            --glass: rgba(255, 255, 255, 0.9);
+            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        #btnIntegrar {
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            background-color: var(--primary);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        #btnIntegrar:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        #btnIntegrar:active {
+            transform: translateY(0);
+        }
+
+        /* Modal Overlay */
+        #authOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* Modal Content */
+        #authModal {
+            background: var(--glass);
+            width: 90%;
+            max-width: 500px;
+            height: 600px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            background: #fff;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        iframe {
+            width: 100%;
+            flex-grow: 1;
+            border: none;
+            background: #fff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Loading indicator for the iframe */
+        #iframeLoader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Integração de Serviços</h1>
+    <button id="btnIntegrar">Conectar Mercado Livre</button>
+
+    <script>
+        const btnIntegrar = document.getElementById("btnIntegrar");
+        const btnClose = document.getElementById("btnClose");
+        const authOverlay = document.getElementById("authOverlay");
+        const authIframe = document.getElementById("authIframe");
+
+    btnIntegrar.addEventListener("click", () => {
+        const url = "https://auth.mercadolivre.com.br/authorization?response_type=code&client_id=1014544177493757&redirect_uri=https://guigaldino.github.io/Aplicacao-Teste/FrontEnd/index.html";
+
+        const width = 600;
+        const height = 700;
+        const left = (window.innerWidth / 2) - (width / 2);
+        const top = (window.innerHeight / 2) - (height / 2);
+
+        window.open(
+            url,
+            "Autenticação Mercado Livre",
+            `width=${width},height=${height},top=${top},left=${left},scrollbars=yes,resizable=yes`
+        );
+    });
+    </script>
+</body>
+</html>

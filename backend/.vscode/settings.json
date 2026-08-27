@@ -1,0 +1,22 @@
+{
+    "sqltools.connections": [
+        {
+            "connectionTimeout": 15,
+            "mssqlOptions": {
+                "appName": "SQLTools",
+                "useUTC": true,
+                "encrypt": false,
+                "trustServerCertificate": true
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 1433,
+            "driver": "MSSQL",
+            "password": "Gui260604",
+            "username": "sa",
+            "name": "DESKTOP-O5RD73S ",
+            "database": "controla_facil"
+        }
+    ]
+}
