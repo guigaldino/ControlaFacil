@@ -13,7 +13,7 @@
             "server": "localhost",
             "port": 1433,
             "driver": "MSSQL",
-            "password": "Gui260604",
+            "password": "CHANGE_ME",
             "username": "sa",
             "name": "DESKTOP-O5RD73S ",
             "database": "controla_facil"

@@ -2,3 +2,10 @@ node_modules/
 .env
 .env.production
 .env.development
+
+# Evita versionar segredos locais do editor (ex.: senha de conexão SQLTools)
+.vscode/*
+!.vscode/extensions.json
+
+# Novos uploads não devem ser versionados (os já existentes permanecem rastreados)
+uploads/*
