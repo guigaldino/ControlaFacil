@@ -1,0 +1,39 @@
+:root {
+    --blueControlafacil: #0C3447;
+    --greenControlafacil: #5FC16C;
+    --white: #FFFFFF;
+    --black: #000000;
+    --gelo: #f8f9fb;
+    --card-bg: #ffffff;
+    --sidebar-width: 260px;
+    --topbar-height: 80px;
+}
+
+body.sidebar-collapsed {
+    --sidebar-width: 85px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--gelo);
+    color: var(--black);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+body, input, textarea, button {
+    font-family: 'Inter', 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.main-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

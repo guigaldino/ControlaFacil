@@ -1,0 +1,144 @@
+.modalOverlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(12, 52, 71, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.2s ease;
+}
+
+.modalContainer {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 32px 24px;
+    animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.iconContainer {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0C3447;
+    margin: 0 0 12px;
+}
+
+.message {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 0 24px;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btnCancel, .btnConfirm {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btnCancel {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.btnCancel:hover {
+    background: #e2e8f0;
+    color: #0C3447;
+}
+
+/* Danger / Warning Variant (Default) */
+.iconDanger {
+    background: #fef2f2;
+    color: #ef4444;
+}
+
+.btnDanger {
+    background: #ef4444;
+    color: white;
+}
+
+.btnDanger:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+/* Question Variant */
+.iconQuestion {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.btnQuestion {
+    background: #2563eb;
+    color: white;
+}
+
+.btnQuestion:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* Success Variant */
+.iconSuccess {
+    background: #f0fdf4;
+    color: #22c55e;
+}
+
+.btnSuccess {
+    background: #22c55e;
+    color: white;
+}
+
+.btnSuccess:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+}
+
+/* Info Variant */
+.iconInfo {
+    background: #f0f9ff;
+    color: #5FC16C;
+}
+
+.btnInfo {
+    background: #5FC16C;
+    color: white;
+}
+
+.btnInfo:hover {
+    background: #309c3f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }

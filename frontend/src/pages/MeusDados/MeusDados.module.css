@@ -1,0 +1,215 @@
+.pageContainer {
+  min-height: 100vh;
+  /* Topo dinâmico e margem esquerda dinâmica */
+  padding: calc(var(--topbar-height) + 40px) 40px 60px;
+  margin-left: var(--sidebar-width);
+  background: radial-gradient(circle at top left, #f8fafc, #f1f5f9);
+  display: flex;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profileCard {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 10px 40px rgba(12, 52, 71, 0.05);
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.cardHeader {
+  padding: 40px;
+  background: linear-gradient(135deg, #0C3447 0%, #1a4a61 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid #5FC16C;
+}
+
+.mainTitle {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.infoText {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 5px 0 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.contentGrid {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.sectionIcon {
+  color: #5FC16C;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0C3447;
+  margin: 0;
+}
+
+.inputsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-left: 4px;
+}
+
+.field input {
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  font-size: 1rem;
+  color: #1e293b;
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.field input:focus:not(:disabled) {
+  outline: none;
+  background: #fff;
+  border-color: #5FC16C;
+  box-shadow: 0 0 0 4px rgba(95, 193, 108, 0.1);
+}
+
+.field input:disabled {
+  color: #94a3b8;
+  border-color: transparent;
+  background: #f1f5f9;
+  cursor: not-allowed;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.editActions {
+  display: flex;
+  gap: 12px;
+}
+
+.btnEdit, .btnSave, .btnCancel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.btnEdit {
+  background: #5FC16C;
+  color: white;
+  box-shadow: 0 4px 12px rgba(95, 193, 108, 0.3);
+}
+
+.btnEdit:hover {
+  background: #4CAF5A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(95, 193, 108, 0.4);
+}
+
+.btnSave {
+  background: white;
+  color: #0C3447;
+}
+
+.btnSave:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+
+.btnCancel {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.btnCancel:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.loadingState {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: #64748b;
+}
+
+.spinner { animation: spin 1s linear infinite; color: #5FC16C; width: 40px; height: 40px; }
+.spinnerSmall { animation: spin 1s linear infinite; width: 18px; height: 18px; }
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 1024px) {
+  .pageContainer {
+    padding: 110px 20px 40px;
+    margin-left: 0;
+  }
+  .cardHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+    padding: 30px;
+  }
+  .inputsGrid {
+    grid-template-columns: 1fr;
+  }
+  .actions, .editActions {
+    width: 100%;
+    flex-direction: column;
+  }
+  .btnEdit, .btnSave, .btnCancel {
+    width: 100%;
+    justify-content: center;
+  }
+}

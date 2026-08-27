@@ -1,0 +1,134 @@
+/* --- Variáveis CSS (Padrão Unificado) --- */
+:root {
+    --primary-color: #5FC16C; /* greenControlafacil */
+    --primary-hover-color: #4CAF5A; 
+    --dark-blue-grey: #0C3447; /* blueControlafacil */
+    --light-grey-bg: #f8f9fb; /* gelo */
+    --text-color-dark: #333;
+    --border-color: #e0e0e0;
+    --input-bg: #ffffff;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --border-radius: 8px;
+}
+
+/* --- Layout Principal --- */
+.container {
+    padding: 30px;
+    background-color: var(--light-grey-bg);
+    min-height: calc(100vh - 65px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.formSection {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--card-shadow);
+    width: 100%;
+    max-width: 650px;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.pageTitle {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    color: var(--dark-blue-grey);
+    font-weight: 600;
+}
+
+/* --- Grupos de Formulário e Inputs --- */
+.formGroup {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup input[type="tel"],
+.formGroup textarea,
+.formGroup select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--input-bg);
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: inherit;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(95, 193, 108, 0.2);
+}
+
+.formGroup select {
+    appearance: none; 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+.formGroup textarea {
+    resize: vertical;
+}
+
+/* --- Botão de Ação --- */
+.actionBtn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+}
+
+.actionBtn:hover {
+    background-color: var(--primary-hover-color);
+}
+.actionBtn:active {
+    transform: scale(0.99);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    .formSection {
+        margin: 10px 0;
+        padding: 20px;
+    }
+    .pageTitle {
+        font-size: 1.5em;
+    }
+    .formGroup input,
+    .formGroup select,
+    .formGroup textarea {
+        padding: 9px 10px;
+    }
+}

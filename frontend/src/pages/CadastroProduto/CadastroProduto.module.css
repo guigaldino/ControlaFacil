@@ -1,0 +1,230 @@
+:root {
+    --primary-color: #5FC16C;
+    --primary-hover-color: #4CAF5A; 
+    --dark-blue-grey: #0C3447;
+    --light-grey-bg: #f8f9fb;
+    --text-color-dark: #333;
+    --border-color: #e0e0e0;
+    --input-bg: #ffffff;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --border-radius: 8px;
+    --card-hover-bg: #f0f0f0;
+}
+
+.container {
+    padding: 30px;
+    background-color: var(--light-grey-bg);
+    min-height: calc(100vh - 65px);
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+}
+
+.containerSection {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px 0;
+}
+
+.formWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.formSection {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--card-shadow);
+    width: 100%;
+    max-width: 650px; 
+    transition: all 0.3s ease;
+}
+
+.pageTitle {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    color: var(--dark-blue-grey);
+    font-weight: 600;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="number"],
+.formGroup textarea { 
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--input-bg);
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: inherit; 
+    resize: vertical; 
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(95, 193, 108, 0.2); 
+}
+
+.actionBtn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+}
+
+.actionBtn:hover {
+    background-color: var(--primary-hover-color);
+}
+.actionBtn:active {
+    transform: scale(0.99);
+}
+
+.selectorSection {
+    text-align: center;
+    padding: 20px;
+}
+
+.selectorTitle {
+    font-size: 2.2em;
+    color: var(--dark-blue-grey);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.selectorSubtitle {
+    font-size: 1.1em;
+    color: var(--text-color-dark);
+    margin-bottom: 40px;
+}
+
+.cardGrid {
+    grid-template-columns: repeat(4, 1fr); 
+    display: grid;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-color);
+}
+
+.cardIcon {
+    display: inline-block;
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.cardTitle {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--dark-blue-grey);
+    margin: 0;
+}
+
+.backButton {
+    background: none;
+    border: none;
+    color: var(--dark-blue-grey);
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.backButton:hover {
+    color: var(--primary-color);
+}
+
+.comingSoon {
+    text-align: center;
+    color: #999;
+    padding: 50px 0;
+}
+
+.selectCustom {
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    padding: 8px 12px;
+    background: #f8f9fa;
+    color: #333;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.selectCustom:focus {
+    border-color: #0056b3;
+    outline: none;
+    background: #e9ecef;
+}
+
+@media (max-width: 992px) {
+    .cardGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    .formSection {
+        padding: 20px;
+    }
+    .cardGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardGrid {
+        grid-template-columns: 1fr;
+    }
+}

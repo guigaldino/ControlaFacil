@@ -1,0 +1,77 @@
+/* Estilos reaproveitados da tabela de Estoque e Marketplace Integrations */
+.headerActions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.tableSection {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.tableWrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+thead th {
+    background-color: #f8f9fb;
+    font-weight: 600;
+    color: #0C3447;
+    border-bottom: 2px solid #e0e0e0;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+tbody tr:hover {
+    background-color: #f7f7f7;
+}
+
+.actionsCell {
+    display: flex;
+    gap: 8px;
+}
+
+.actionBtn {
+    background: none;
+    border: none;
+    padding: 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.actionBtn:hover {
+    background: #f1f5f9;
+    color: #0C3447;
+}
+
+.btnEdit:hover {
+    color: #3b82f6;
+    background: #eff6ff;
+}
+
+.btnDelete:hover {
+    color: #ef4444;
+    background: #fef2f2;
+}

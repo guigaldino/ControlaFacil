@@ -1,0 +1,359 @@
+/* Variáveis adaptadas do seu tema global */
+:root {
+    --primary-color: #5FC16C; /* greenControlafacil */
+    --primary-hover-color: #4CAF5A; /* Um pouco mais escuro que o primary */
+    --secondary-color: #bdc3c7;
+    --secondary-hover-color: #a7ad_b0_;
+    --dark-blue-grey: #0C3447; /* blueControlafacil */
+    --light-grey-bg: #f8f9fb; /* gelo */
+    --text-color-dark: #333;
+    --text-color-light: #f8f9fa;
+    --border-color: #e0e0e0;
+    --input-bg: #ffffff;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --border-radius: 8px;
+    --stepper-inactive-bg: #ecf0f1;
+    --stepper-inactive-text: #7f8c8d;
+}
+
+/* Base */
+.registration-container {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 700px; 
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+/* Branding/Sidebar */
+.registration-branding {
+    flex-basis: 40%;
+    background: linear-gradient(135deg, var(--dark-blue-grey), #3e5770);
+    color: var(--text-color-light);
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+}
+
+.registration-branding h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.registration-branding p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.branding-features p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.iconFeature {
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+
+/* Form Area */
+.registration-form-area {
+    flex-basis: 60%;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+
+/* Stepper */
+.stepper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 500px;
+    align-self: center;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--stepper-inactive-text);
+    transition: all 0.3s ease;
+    padding: 5px;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--stepper-inactive-bg);
+    color: var(--stepper-inactive-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    margin-bottom: 5px;
+    border: 2px solid var(--stepper-inactive-bg);
+    transition: all 0.3s ease;
+}
+
+.step-number svg {
+    /* UI: Garante que o ícone de check se ajuste perfeitamente */
+    display: block; 
+    margin: auto; 
+}
+
+.step-label {
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+.step.active .step-number {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+.step.active .step-label {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.step.completed .step-number {
+    /* Estado Concluído - Adiciona o CheckCircle, mantendo a cor primária */
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+.step.completed .step-label {
+    color: var(--text-color-dark);
+}
+
+.step-connector {
+    flex-grow: 1;
+    height: 2px;
+    background-color: var(--stepper-inactive-bg);
+    margin: 0 10px;
+    position: relative;
+    top: -8px;
+}
+.step-connector.active {
+    background-color: var(--primary-color);
+}
+
+
+/* Form */
+.form-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-header h2 {
+    font-size: 1.7em;
+    color: var(--dark-blue-grey);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.step-subtitle {
+    font-size: 1em;
+    color: #555;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-align: center; /* UI/UX: Centraliza o subtítulo */
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.current-step {
+    display: grid; /* UI: Alterado de 'block' para 'grid' para melhor controle de layout */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Layout adaptável para inputs */
+    gap: 15px 20px; /* Espaçamento entre os campos */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+
+/* Força o layout original em telas pequenas */
+@media (max-width: 550px) {
+    .form-step.current-step {
+        display: block;
+    }
+    .input-group {
+        margin-bottom: 18px;
+    }
+}
+
+
+/* Form Inputs */
+.input-group {
+    margin-bottom: 0; /* Removido margem desnecessária se estiver usando grid gap */
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85em;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"],
+.input-group input[type="tel"],
+.input-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--input-bg);
+    font-size: 0.9em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(95, 193, 108, 0.3); /* Corrigido o alpha do primary color */
+}
+
+.input-group select {
+    appearance: none; 
+    /* UI: Cor do ícone de dropdown ajustada para um tom mais suave (fill='%23666') */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+/* Buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.navigation-buttons button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 150px; /* UX: Garante que os botões tenham um tamanho mínimo */
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    margin-left: auto;
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover-color);
+}
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color-dark);
+}
+.btn-secondary:hover {
+    background-color: var(--secondary-hover-color);
+}
+.navigation-buttons button:active {
+    transform: scale(0.98);
+}
+.navigation-buttons :only-child {
+    margin-left: 0;
+}
+
+
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #666;
+}
+.login-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.app-version {
+    text-align: center;
+    margin-top: auto;
+    padding-top: 20px;
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .registration-container {
+        flex-direction: column;
+        max-width: 550px;
+        min-height: 0;
+    }
+    .registration-branding {
+        flex-basis: auto;
+        padding: 40px 20px;
+    }
+    .registration-form-area {
+        flex-basis: auto;
+        padding: 30px 25px;
+    }
+    .stepper {
+        max-width: 100%;
+    }
+    .step-label {
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 480px) {
+    .registration-branding {
+        padding: 30px 15px;
+    }
+    .registration-branding h1 {
+        font-size: 1.6em;
+    }
+
+    .form-header h2 {
+        font-size: 1.5em;
+    }
+    .step-subtitle {
+        font-size: 0.9em;
+    }
+    .navigation-buttons button {
+        padding: 10px 18px;
+        font-size: 0.9em;
+    }
+    .step-number {
+        width: 25px;
+        height: 25px;
+        font-size: 0.9em;
+    }
+    .step-connector {
+        top: -6px;
+    }
+}

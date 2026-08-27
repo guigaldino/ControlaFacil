@@ -1,0 +1,50 @@
+.homeContainer { 
+  padding: calc(var(--topbar-height) + 40px) 40px 40px; 
+  margin-left: var(--sidebar-width);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 1600px;
+}
+
+.welcomeHeader { margin-bottom: 48px; }
+.welcomeHeader h1 { font-size: 2.5rem; font-weight: 800; color: #0C3447; margin-bottom: 8px; letter-spacing: -0.02em; }
+.welcomeHeader p { color: #64748b; font-size: 1.15rem; font-weight: 500; }
+
+.modulesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.moduleCard {
+  background: white;
+  padding: 35px;
+  border-radius: 28px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex; flex-direction: column; gap: 24px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.moduleCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(12, 52, 71, 0.08);
+  border-color: #cbd5e1;
+}
+
+.cardHeader { display: flex; justify-content: space-between; align-items: flex-start; }
+.iconBox { width: 64px; height: 64px; border-radius: 20px; display: flex; align-items: center; justify-content: center; }
+.arrowIcon { color: #cbd5e1; transition: transform 0.3s; }
+.moduleCard:hover .arrowIcon { transform: translate(6px, -6px); color: #0C3447; }
+
+.moduleCard h3 { font-size: 1.4rem; font-weight: 800; color: #0C3447; margin: 0; }
+.moduleCard p { font-size: 1rem; color: #64748b; line-height: 1.6; margin: 0; font-weight: 500; }
+
+@media (max-width: 1024px) {
+  .homeContainer { 
+    padding: 110px 24px 40px; 
+    margin-left: 0;
+  }
+  .welcomeHeader h1 { font-size: 2rem; }
+  .modulesGrid { grid-template-columns: 1fr; }
+}

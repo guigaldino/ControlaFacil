@@ -1,0 +1,315 @@
+/* style/LoginU.module.css */
+
+/* --- Variáveis CSS --- */
+:root {
+    --primary-color: #27ae60;
+    --primary-hover-color: #229954;
+    --dark-blue-grey: #2c3e50;
+    --light-grey-bg: #f4f6f9;
+    --text-color-dark: #333;
+    --text-color-light: #f8f9fa;
+    --border-color: #e0e0e0;
+    --input-bg: #f9f9f9;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+/* --- Estilos Base e Layout Principal --- */
+.body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-grey-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-color-dark);
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.loginContainer {
+    display: flex;
+    width: 100%;
+    max-width: 900px; /* Layout de duas colunas em telas grandes */
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+/* --- Lado Esquerdo: Branding --- */
+.loginBranding {
+    flex-basis: 45%;
+    background: linear-gradient(135deg, var(--dark-blue-grey), #34495e);
+    color: var(--text-color-light);
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* NOVO UI: Estilo para o ícone de Branding */
+.brandingIcon {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: var(--primary-color); /* Toque de cor primária */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.loginBranding h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.loginBranding p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* --- Lado Direito: Formulário --- */
+.loginFormArea {
+    flex-basis: 55%;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* NOVO UX/UI: Mensagens de Feedback */
+.feedbackMessage {
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    font-size: 0.9em;
+    font-weight: 500;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.feedbackMessage.error {
+    background-color: #fcebeb; /* Light Red Background */
+    color: #e74c3c; /* Darker Red Text */
+    border: 1px solid #e74c3c;
+}
+
+.feedbackMessage.success {
+    background-color: #eaf7ee; /* Light Green Background */
+    color: var(--primary-color); /* Green Text */
+    border: 1px solid var(--primary-color);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.formHeader {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.formHeader h2 {
+    font-size: 1.8em;
+    color: var(--dark-blue-grey);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.formHeader p {
+    color: #777;
+    font-size: 0.95em;
+}
+
+/* Campos de Input */
+.inputGroup {
+    margin-bottom: 20px;
+}
+
+.inputGroup label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.inputFieldWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para ícones Font Awesome (usa :global para classes externas) */
+.inputFieldWrapper :global(.icon) {
+    position: absolute;
+    left: 15px;
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+.inputFieldWrapper input {
+    width: 100%;
+    padding: 12px 15px 12px 40px; /* Acolchoamento para o ícone */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--input-bg);
+    font-size: 0.95em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputFieldWrapper input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+}
+
+/* Opções (Lembrar-me e Esqueceu a senha) */
+.formOptions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.85em;
+}
+
+.rememberMe {
+    display: flex;
+    align-items: center;
+    color: #666;
+}
+
+.rememberMe input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: var(--primary-color);
+}
+
+.forgotPassword {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgotPassword:hover {
+    text-decoration: underline;
+}
+
+/* Botão de Login */
+.btnLogin {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease, opacity 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex; /* MUDANÇA UI: Para centralizar o texto/ícone */
+    align-items: center;
+    justify-content: center;
+}
+
+.btnLogin:hover:not(:disabled) {
+    background-color: var(--primary-hover-color);
+}
+
+.btnLogin:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+/* NOVO UX/UI: Estado Desabilitado (Carregando) */
+.btnLogin:disabled {
+    background-color: #95a5a6; /* Cor mais suave */
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* Estilo para o ícone dentro do botão (Entrar e Seta) */
+.btnLogin i {
+    margin: 0 4px;
+    font-size: 1em;
+}
+
+/* Link de Cadastro */
+.signupLink {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.signupLink a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signupLink a:hover {
+    text-decoration: underline;
+}
+
+/* Versão do App */
+.appVersion {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+
+/* --- Responsividade (Media Queries) --- */
+@media (max-width: 768px) {
+    .loginContainer {
+        flex-direction: column; /* Colunas empilhadas em telas menores */
+        max-width: 450px;
+    }
+
+    .loginBranding {
+        flex-basis: auto;
+        padding: 40px 20px;
+    }
+    .loginBranding h1 {
+        font-size: 1.8em;
+    }
+    .brandingIcon { /* Ajuste do ícone de branding em mobile */
+        font-size: 3em;
+    }
+
+    .loginFormArea {
+        flex-basis: auto;
+        padding: 30px;
+    }
+
+    .formHeader h2 {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    .loginBranding {
+        padding: 30px 15px;
+    }
+    .loginBranding h1 {
+        font-size: 1.5em;
+    }
+    .loginBranding p {
+        font-size: 0.9em;
+    }
+
+    .loginFormArea {
+        padding: 30px 20px;
+    }
+    .formOptions {
+        flex-direction: column; /* Opções empilhadas */
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,1 @@
+export { ModalRelatorioPersonalizado } from './ModalRelatorioPersonalizado';

@@ -1,0 +1,1989 @@
+/* CSS Module for LandingPage */
+
+:root {
+  --nav-height: 80px;
+  --primary-gradient: linear-gradient(135deg, #0c3447 0%, #174b64 100%);
+  --accent-gradient: linear-gradient(135deg, #5fc16c 0%, #4cb059 100%);
+  --dark-bg: #072331;
+  --card-shadow: 0 10px 30px rgba(12, 52, 71, 0.08);
+  --hover-shadow: 0 15px 35px rgba(12, 52, 71, 0.15);
+  --glow-green: 0 0 20px rgba(95, 193, 108, 0.4);
+}
+
+.landingContainer {
+  background-color: var(--gelo);
+  color: var(--black);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Helper Utilities */
+.greenText {
+  color: var(--greenControlafacil);
+}
+.greenTextStrong {
+  color: #2e7d32;
+}
+.blueText {
+  color: var(--blueControlafacil);
+}
+.yellowText {
+  color: #f57f17;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: rgba(12, 52, 71, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navbarContent {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--white);
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logoIcon {
+  width: 38px;
+  height: 38px;
+  background-color: rgba(95, 193, 108, 0.15);
+  border: 1.5px solid var(--greenControlafacil);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--glow-green);
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--white);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--greenControlafacil);
+  transition: width 0.2s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.btnNavLogin {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  padding: 0.55rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnNavLogin:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btnNavCTA {
+  background: var(--accent-gradient);
+  border: none;
+  color: var(--white);
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(95, 193, 108, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btnNavCTA:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(95, 193, 108, 0.5), var(--glow-green);
+}
+
+.mobileMenuToggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* HERO SECTION */
+.heroSection {
+  background: radial-gradient(circle at top right, #104158 0%, #0c3447 60%, #06202c 100%);
+  padding: calc(var(--nav-height) + 4rem) 2rem 6rem 2rem;
+  color: var(--white);
+  position: relative;
+  border-bottom: 3px solid var(--greenControlafacil);
+}
+
+.heroGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.heroTextContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.academicBadge {
+  background-color: rgba(95, 193, 108, 0.12);
+  border: 1px dashed rgba(95, 193, 108, 0.4);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: fit-content;
+  color: var(--greenControlafacil);
+  animation: pulseGhost 3s infinite ease-in-out;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.highlightText {
+  background: linear-gradient(120deg, #5fc16c 0%, #8ced97 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroDescription {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.heroCTAButtons {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.btnHeroPrimary {
+  background: var(--accent-gradient);
+  color: var(--white);
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 4px 20px rgba(95, 193, 108, 0.35);
+  transition: all 0.2s ease;
+}
+
+.btnHeroPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(95, 193, 108, 0.5), var(--glow-green);
+}
+
+.btnHeroSecondary {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  padding: 0.85rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btnHeroSecondary:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.heroTrustIndicators {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* DYNAMIC MOCKUP DESIGN */
+.heroMockupArea {
+  position: relative;
+  width: 100%;
+}
+
+.dashboardMockup {
+  background-color: #072331;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(12, 52, 71, 0.4);
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mockupHeader {
+  background-color: #04141d;
+  height: 38px;
+  padding: 0 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mockupDots {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.dotRed, .dotYellow, .dotGreen {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dotRed { background-color: #ef5350; }
+.dotYellow { background-color: #ffca28; }
+.dotGreen { background-color: #66bb6a; }
+
+.mockupUrl {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 0.2rem 1.5rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mockupBody {
+  height: 320px;
+  display: flex;
+}
+
+.mockupSidebar {
+  background-color: #051a24;
+  width: 55px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 2rem;
+}
+
+.mockupLogo {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(95, 193, 108, 0.1);
+  border: 1px solid var(--greenControlafacil);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mockupLogoText {
+  display: none;
+}
+
+.mockupSidebarItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.mockupSidebarItem {
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mockupSidebarItem:hover {
+  color: var(--white);
+}
+
+.mockupSidebarActive {
+  color: var(--greenControlafacil);
+}
+
+.mockupMain {
+  flex: 1;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.mockupTitleBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mockupBreadcrumb {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.mockupTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 0.1rem;
+}
+
+.mockupBadge {
+  background-color: rgba(95, 193, 108, 0.1);
+  border: 1px solid rgba(95, 193, 108, 0.3);
+  font-size: 0.7rem;
+  color: var(--greenControlafacil);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+}
+
+.mockupBadgeDot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--greenControlafacil);
+  border-radius: 50%;
+  display: inline-block;
+  animation: glowPulse 1.5s infinite;
+}
+
+.mockupCardsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.mockupCard {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+}
+
+.mockupCardLabel {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.mockupCardFlex {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.mockupCardVal {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.alertText {
+  color: #ff8a80;
+}
+
+.mockupTrend {
+  font-size: 0.7rem;
+  color: var(--greenControlafacil);
+  font-weight: 600;
+}
+
+.mockupTrendDown {
+  font-size: 0.7rem;
+  color: #ffca28;
+  font-weight: 600;
+}
+
+.mockupDataGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.mockupGraphCard {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.mockupGraphLines {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 80px;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.mockupGraphBar {
+  background-color: rgba(95, 193, 108, 0.85);
+  width: 14px;
+  border-radius: 3px 3px 0 0;
+  transition: height 0.6s ease;
+}
+
+.mockupFeedCard {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feedItem {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.7rem;
+  margin-top: 0.4rem;
+  border-left: 3px solid var(--greenControlafacil);
+}
+
+.feedItemHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.15rem;
+}
+
+.feedItemChannel {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+.feedItemTime {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.feedItemBody {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+.mockupMarketplaces {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.channelBadge {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.channelDotActive {
+  width: 5px;
+  height: 5px;
+  background-color: var(--greenControlafacil);
+  border-radius: 50%;
+}
+
+/* SECTION GLOBAL HEADERS */
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3.5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.sectionSubtitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--greenControlafacil);
+}
+
+.sectionTitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--blueControlafacil);
+}
+
+.sectionDescription {
+  font-size: 1.05rem;
+  color: rgba(12, 52, 71, 0.7);
+  line-height: 1.5;
+}
+
+/* BENEFITS SECTION */
+.benefitsSection {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.benefitCard {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 2.2rem 2rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(12, 52, 71, 0.04);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.benefitCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+  border-color: rgba(95, 193, 108, 0.2);
+}
+
+.benefitIconContainer {
+  width: 52px;
+  height: 52px;
+  background-color: rgba(12, 52, 71, 0.05);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blueControlafacil);
+  transition: all 0.3s ease;
+}
+
+.benefitCard:hover .benefitIconContainer {
+  background-color: rgba(95, 193, 108, 0.12);
+  color: var(--greenControlafacil);
+}
+
+.benefitCardTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--blueControlafacil);
+}
+
+.benefitCardDesc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(12, 52, 71, 0.7);
+}
+
+/* SINGLE-TENANT EXPLANATION SECTION */
+.tenantExplanationSection {
+  background-color: var(--white);
+  padding: 6rem 2rem;
+  border-top: 1px solid rgba(12, 52, 71, 0.05);
+  border-bottom: 1px solid rgba(12, 52, 71, 0.05);
+}
+
+.tenantGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.tenantTextContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tenantTitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--blueControlafacil);
+  line-height: 1.2;
+}
+
+.tenantDesc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(12, 52, 71, 0.75);
+}
+
+.featuresCheckList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.checkListItem {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 500;
+  color: var(--blueControlafacil);
+  font-size: 0.95rem;
+}
+
+/* Architecture Diagram */
+.tenantVisualArea {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.architectureDiagram {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.diagramBox {
+  background-color: var(--gelo);
+  border: 1px solid rgba(12, 52, 71, 0.08);
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.activeDiagramBox {
+  border: 2px solid var(--greenControlafacil);
+  background-color: rgba(95, 193, 108, 0.02);
+  box-shadow: 0 4px 20px rgba(95, 193, 108, 0.06);
+}
+
+.activeDiagramPulse {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--greenControlafacil);
+  border-radius: 50%;
+  box-shadow: var(--glow-green);
+  animation: glowPulse 1.5s infinite;
+}
+
+.diagramBoxTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--blueControlafacil);
+}
+
+.diagramBoxSubtitle {
+  font-size: 0.75rem;
+  color: rgba(12, 52, 71, 0.5);
+  margin-top: -0.3rem;
+}
+
+.multiTenantVisual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0;
+}
+
+.tenantUserNode {
+  background-color: var(--white);
+  border: 1px solid rgba(12, 52, 71, 0.1);
+  padding: 0.3rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(12, 52, 71, 0.7);
+  display: inline-block;
+}
+
+.tenantUserNodeActive {
+  background-color: var(--blueControlafacil);
+  color: var(--white);
+  padding: 0.4rem 1.4rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(12, 52, 71, 0.2);
+}
+
+.connectorLines {
+  color: rgba(12, 52, 71, 0.3);
+  font-size: 0.8rem;
+  letter-spacing: -2px;
+}
+
+.sharedDbNode {
+  background-color: #ffebee;
+  border: 1px solid #ef9a9a;
+  color: #c62828;
+  padding: 0.45rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dangerBg {
+  background-color: #fff1f0;
+  border-color: #ffa39e;
+  color: #cf1322;
+}
+
+.diagramWarning {
+  font-size: 0.7rem;
+  color: #cf1322;
+  font-style: italic;
+}
+
+.singleTenantVisual {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+}
+
+.instanceRow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.instanceRowOpacity {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  opacity: 0.45;
+}
+
+.connectorLineHorizontal {
+  color: rgba(12, 52, 71, 0.4);
+  font-size: 0.9rem;
+}
+
+.dedicatedDbNode {
+  background-color: var(--white);
+  border: 1px solid rgba(12, 52, 71, 0.1);
+  color: var(--blueControlafacil);
+  padding: 0.4rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.successBg {
+  background-color: #f6ffed;
+  border: 1.5px solid #b7eb8f;
+  color: #389e0d;
+  box-shadow: 0 4px 10px rgba(56, 158, 13, 0.1);
+}
+
+.diagramSuccess {
+  font-size: 0.7rem;
+  color: #389e0d;
+  font-weight: 600;
+}
+
+/* PLANS SECTION */
+.plansSection {
+  padding: 6rem 2rem;
+  background-color: var(--gelo);
+}
+
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: -1rem;
+}
+
+.toggleContainer span {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: rgba(12, 52, 71, 0.6);
+  transition: color 0.2s ease;
+}
+
+.toggleContainer .activePeriod {
+  color: var(--blueControlafacil);
+}
+
+.toggleBtn {
+  width: 52px;
+  height: 28px;
+  border-radius: 50px;
+  background-color: var(--blueControlafacil);
+  border: none;
+  cursor: pointer;
+  padding: 3px;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.toggleSlider {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--white);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sliderRight {
+  transform: translateX(24px);
+}
+
+.discountBadge {
+  background-color: #f6ffed;
+  border: 1px solid #b7eb8f;
+  color: #389e0d;
+  padding: 0.15rem 0.5rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: 0.4rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.plansGrid {
+  max-width: 1200px;
+  margin: 3rem auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.planCard {
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 3rem 2rem 2.5rem 2rem;
+  border: 1px solid rgba(12, 52, 71, 0.06);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.planCardRecommended {
+  border: 2px solid var(--greenControlafacil);
+  transform: scale(1.03);
+  box-shadow: 0 15px 40px rgba(95, 193, 108, 0.12);
+}
+
+@media (max-width: 992px) {
+  .planCardRecommended {
+    transform: none;
+  }
+}
+
+.recommendedBadge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--greenControlafacil);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  box-shadow: var(--glow-green);
+}
+
+.planCardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.planBadge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--greenControlafacil);
+  background-color: rgba(95, 193, 108, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  width: fit-content;
+  letter-spacing: 0.5px;
+}
+
+.planName {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--blueControlafacil);
+}
+
+.planDesc {
+  font-size: 0.9rem;
+  color: rgba(12, 52, 71, 0.6);
+  line-height: 1.4;
+}
+
+.planPriceArea {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.currencySymbol {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--blueControlafacil);
+  margin-right: 0.2rem;
+}
+
+.planPrice {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--blueControlafacil);
+  line-height: 1;
+}
+
+.pricePeriod {
+  font-size: 0.95rem;
+  color: rgba(12, 52, 71, 0.5);
+  margin-left: 0.2rem;
+}
+
+.annualDetail {
+  display: block;
+  width: 100%;
+  font-size: 0.75rem;
+  color: #389e0d;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.planDivider {
+  border: 0;
+  height: 1px;
+  background-color: rgba(12, 52, 71, 0.08);
+}
+
+.planFeaturesList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.planFeatureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  color: rgba(12, 52, 71, 0.8);
+  line-height: 1.3;
+}
+
+.highlightedFeature {
+  font-weight: 700;
+  color: var(--blueControlafacil);
+}
+
+.btnPlanCTA {
+  background-color: var(--gelo);
+  border: 1.5px solid rgba(12, 52, 71, 0.12);
+  color: var(--blueControlafacil);
+  padding: 0.85rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.btnPlanCTA:hover {
+  background-color: var(--blueControlafacil);
+  color: var(--white);
+  border-color: var(--blueControlafacil);
+}
+
+.btnPlanCTARecommended {
+  background: var(--accent-gradient);
+  border: none;
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(95, 193, 108, 0.25);
+}
+
+.btnPlanCTARecommended:hover {
+  background: var(--accent-gradient);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(95, 193, 108, 0.45);
+}
+
+/* FAQ SECTION */
+.faqSection {
+  padding: 6rem 2rem;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faqItem {
+  background-color: var(--white);
+  border: 1px solid rgba(12, 52, 71, 0.05);
+  border-radius: 10px;
+  padding: 1.2rem 1.6rem;
+  cursor: pointer;
+  box-shadow: var(--card-shadow);
+  transition: all 0.25s ease;
+}
+
+.faqItem:hover {
+  border-color: rgba(12, 52, 71, 0.15);
+}
+
+.faqItemActive {
+  border-color: rgba(95, 193, 108, 0.4);
+}
+
+.faqQuestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  color: var(--blueControlafacil);
+  font-size: 1.05rem;
+}
+
+.faqArrow {
+  color: rgba(12, 52, 71, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.faqItemActive .faqArrow {
+  transform: rotate(180deg);
+  color: var(--greenControlafacil);
+}
+
+.faqAnswer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(12, 52, 71, 0.06);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(12, 52, 71, 0.7);
+}
+
+/* FOOTER */
+.footer {
+  background-color: #051924;
+  color: var(--white);
+  padding: 5rem 2rem 2.5rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footerGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr;
+  gap: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footerMainCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.footerAbout {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+}
+
+.footerLinksCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footerLinksCol h4, .footerAcademicCol h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--white);
+}
+
+.footerLinksCol a {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footerLinksCol a:hover {
+  color: var(--white);
+}
+
+.footerAcademicCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footerAcademicCol p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+}
+
+.smallAcademicAlert {
+  color: #ffb74d !important;
+  font-size: 0.8rem !important;
+  font-weight: 600;
+}
+
+.footerCopyright {
+  text-align: center;
+  padding-top: 2rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* SIMULATOR MODAL */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 25, 36, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modalContainer {
+  background-color: var(--white);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  animation: modalScaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modalHeader {
+  background-color: var(--gelo);
+  padding: 1.2rem 1.8rem;
+  border-bottom: 1px solid rgba(12, 52, 71, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalHeaderTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--blueControlafacil);
+}
+
+.modalHeaderTitle h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.modalCloseBtn {
+  background: transparent;
+  border: none;
+  color: rgba(12, 52, 71, 0.4);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.modalCloseBtn:hover {
+  color: var(--black);
+}
+
+/* Wizard step indicator */
+.wizardSteps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2.5rem;
+  background-color: rgba(12, 52, 71, 0.02);
+  border-bottom: 1px solid rgba(12, 52, 71, 0.04);
+}
+
+.wizardStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.stepNum {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(12, 52, 71, 0.08);
+  color: rgba(12, 52, 71, 0.4);
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.stepLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgba(12, 52, 71, 0.4);
+  text-transform: uppercase;
+}
+
+.wizardStepActive .stepNum {
+  background-color: var(--greenControlafacil);
+  color: var(--white);
+  box-shadow: var(--glow-green);
+}
+
+.wizardStepActive .stepLabel {
+  color: var(--blueControlafacil);
+}
+
+.wizardLine {
+  flex: 1;
+  height: 2px;
+  background-color: rgba(12, 52, 71, 0.08);
+  margin: 0 1rem;
+  margin-top: -15px;
+}
+
+.modalBody {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+.modalIntro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.modalIntro h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--blueControlafacil);
+}
+
+.modalIntro p {
+  font-size: 0.85rem;
+  color: rgba(12, 52, 71, 0.6);
+  line-height: 1.4;
+}
+
+/* FORMS IN MODAL */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  width: 100%;
+}
+
+.formRow {
+  display: flex;
+  gap: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .formRow {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
+
+.formGroup label, .subdomainSetupArea label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--blueControlafacil);
+}
+
+.formGroup input, .subdomainInputGroup input {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(12, 52, 71, 0.15);
+  font-size: 0.95rem;
+  color: var(--blueControlafacil);
+  background-color: var(--white);
+  transition: all 0.2s;
+  outline: none;
+}
+
+.formGroup input:focus, .subdomainInputGroup input:focus {
+  border-color: var(--greenControlafacil);
+  box-shadow: 0 0 0 3px rgba(95, 193, 108, 0.15);
+}
+
+.modalWarningBox {
+  background-color: #fffbe6;
+  border: 1px solid #ffe58f;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.modalInfoBox {
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.modalInfoBox strong {
+  color: var(--blueControlafacil);
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+.modalFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  border-top: 1px solid rgba(12, 52, 71, 0.06);
+  padding-top: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.btnSecModal {
+  background-color: transparent;
+  border: 1.5px solid rgba(12, 52, 71, 0.15);
+  color: rgba(12, 52, 71, 0.7);
+  padding: 0.65rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnSecModal:hover {
+  background-color: var(--gelo);
+  color: var(--blueControlafacil);
+}
+
+.btnPriModal {
+  background: var(--accent-gradient);
+  border: none;
+  color: var(--white);
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(95, 193, 108, 0.25);
+  transition: all 0.2s;
+}
+
+.btnPriModal:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(95, 193, 108, 0.4);
+}
+
+.btnPriModal:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* SUBDOMAIN SECTION */
+.subdomainSetupArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.subdomainInputGroup {
+  display: flex;
+  align-items: stretch;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(12, 52, 71, 0.15);
+}
+
+.subdomainInputGroup input {
+  border: none;
+  border-radius: 0;
+  flex: 1;
+  text-align: right;
+  padding-right: 0.3rem;
+}
+
+.subdomainSuffix {
+  background-color: var(--gelo);
+  border-left: 1px solid rgba(12, 52, 71, 0.1);
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(12, 52, 71, 0.6);
+  display: flex;
+  align-items: center;
+}
+
+.subdomainCheckRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.2rem;
+  min-height: 32px;
+}
+
+.btnVerifySubdomain {
+  background-color: var(--blueControlafacil);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btnVerifySubdomain:hover {
+  opacity: 0.9;
+}
+
+.btnVerifySubdomain:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkSuccess {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #389e0d;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  animation: slideInLeft 0.2s ease;
+}
+
+/* STEP 3 PROVISIONING SIMULATOR MAP & CLI */
+.cloudMapArea {
+  background-color: #051a24;
+  border-radius: 12px;
+  padding: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cloudNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 600;
+  font-size: 0.75rem;
+  transition: color 0.4s;
+}
+
+.nodeActiveIcon {
+  color: var(--greenControlafacil);
+  filter: drop-shadow(var(--glow-green));
+  transform: scale(1.15);
+  transition: all 0.4s ease;
+}
+
+.cloudLinkLine {
+  flex: 1;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.08);
+  margin: 0 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.linkLineActive::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background-color: var(--greenControlafacil);
+  animation: linePulse 1.5s infinite linear;
+}
+
+.progressContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--blueControlafacil);
+}
+
+.progressBarBg {
+  height: 8px;
+  background-color: rgba(12, 52, 71, 0.08);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: var(--accent-gradient);
+  border-radius: 50px;
+  transition: width 0.3s ease;
+}
+
+.consoleLogBox {
+  background-color: #04141d;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+}
+
+.consoleLogHeader {
+  background-color: #020a0f;
+  padding: 0.4rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.65rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.consoleLogContent {
+  padding: 0.8rem;
+  height: 110px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.consoleLogLine {
+  font-size: 0.72rem;
+  color: #a2e8dd;
+  line-height: 1.3;
+  word-break: break-all;
+}
+
+/* STEP 4 SUCCESS STATE */
+.successAnimationArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.8rem;
+  padding: 0.5rem 0;
+}
+
+.successCircle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #f6ffed;
+  border: 3px solid #b7eb8f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounceScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 25px rgba(56, 158, 13, 0.15);
+}
+
+.successAnimationArea h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #389e0d;
+}
+
+.successAnimationArea p {
+  font-size: 0.9rem;
+  color: rgba(12, 52, 71, 0.65);
+}
+
+.credentialsCard {
+  background-color: var(--gelo);
+  border: 1px solid rgba(12, 52, 71, 0.08);
+  border-radius: 10px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.credentialsCard h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--blueControlafacil);
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+  border-bottom: 1px solid rgba(12, 52, 71, 0.06);
+  padding-bottom: 0.4rem;
+}
+
+.credentialRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.credLabel {
+  color: rgba(12, 52, 71, 0.6);
+}
+
+.credVal {
+  color: var(--blueControlafacil);
+  font-weight: 700;
+}
+
+.btnPriModalFull {
+  background: var(--accent-gradient);
+  border: none;
+  color: var(--white);
+  padding: 0.85rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(95, 193, 108, 0.3);
+  transition: all 0.2s;
+}
+
+.btnPriModalFull:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(95, 193, 108, 0.5), var(--glow-green);
+}
+
+/* MOBILE NAVBAR SPECIFIC */
+.mobileMenu {
+  display: none;
+  background-color: rgba(12, 52, 71, 0.98);
+  position: absolute;
+  top: var(--nav-height);
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  flex-direction: column;
+  gap: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  animation: slideDown 0.25s ease-out;
+}
+
+.mobileMenu a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.mobileBtnLogin {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  padding: 0.7rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mobileBtnCTA {
+  background: var(--accent-gradient);
+  color: var(--white);
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .heroTextContent {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .heroCTAButtons {
+    justify-content: center;
+  }
+  
+  .heroTrustIndicators {
+    justify-content: center;
+  }
+  
+  .tenantGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  
+  .navLinks, .navActions {
+    display: none;
+  }
+  
+  .mobileMenuToggle {
+    display: block;
+  }
+  
+  .mobileMenu {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.3rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .tenantTitle {
+    font-size: 1.8rem;
+  }
+  
+  .wizardSteps {
+    padding: 1.2rem 1rem;
+  }
+  
+  .wizardLine {
+    margin: 0 0.4rem;
+    margin-top: -15px;
+  }
+  
+  .cloudMapArea {
+    padding: 1.2rem 0.5rem;
+  }
+  
+  .cloudNode span {
+    font-size: 0.65rem;
+  }
+}
+
+/* ANIMATIONS KEYFRAMES */
+@keyframes glowPulse {
+  0% { transform: scale(0.9); opacity: 0.8; box-shadow: 0 0 0 0 rgba(95, 193, 108, 0.4); }
+  50% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 8px 4px rgba(95, 193, 108, 0.2); }
+  100% { transform: scale(0.9); opacity: 0.8; box-shadow: 0 0 0 0 rgba(95, 193, 108, 0.4); }
+}
+
+@keyframes pulseGhost {
+  0%, 100% { opacity: 0.95; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(0.98); }
+}
+
+@keyframes linePulse {
+  0% { left: -50%; }
+  100% { left: 100%; }
+}
+
+@keyframes modalScaleUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounceScale {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-10px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}

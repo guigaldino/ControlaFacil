@@ -1,0 +1,516 @@
+/* Modal Overlay */
+.modalOverlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(12, 52, 71, 0.4);
+    backdrop-filter: blur(8px);
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Modal Container */
+.modalContainer {
+    background: white;
+    width: 100%;
+    max-width: 950px;
+    max-height: 90vh;
+    border-radius: 28px;
+    box-shadow: 0 25px 70px rgba(12, 52, 71, 0.2);
+    overflow: hidden;
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.modalHeader {
+    padding: 24px 32px;
+    background: #f8fafc;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.titleArea {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.modalHeader h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0C3447;
+    margin: 0;
+}
+
+.meliId {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s;
+    display: flex;
+}
+
+.closeBtn:hover {
+    background: #f1f5f9;
+    color: #0C3447;
+}
+
+/* Body */
+.modalBody {
+    padding: 32px;
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.loadingWrapper,
+.errorWrapper {
+    padding: 80px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+}
+
+.errorWrapper p {
+    color: #ef4444;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Timeline Styles */
+.timelineContainer {
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 20px 24px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.timelineContainer h3 {
+    margin: 0 0 18px 0;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #0C3447;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    gap: 20px;
+}
+
+.timelineStep {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.timelineMarker {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s;
+}
+
+.timelineMarkerDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+}
+
+.timelineLine {
+    position: absolute;
+    top: 11px;
+    left: 50%;
+    width: 100%;
+    height: 3px;
+    background: #e2e8f0;
+    z-index: 1;
+    transition: all 0.3s;
+}
+
+.timelineStep.active .timelineMarker {
+    background: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+.timelineStep.completed .timelineMarker {
+    background: #5FC16C;
+    box-shadow: 0 0 0 4px rgba(95, 193, 108, 0.2);
+}
+
+.timelineStep.completed .timelineLine {
+    background: #5FC16C;
+}
+
+.timelineStep.cancelledStep .timelineMarker {
+    background: #ef4444;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2);
+}
+
+.timelineStep.cancelledStep .timelineLine {
+    background: #ef4444;
+}
+
+.timelineInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stepTitle {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #64748b;
+}
+
+.timelineStep.active .stepTitle {
+    color: #0C3447;
+}
+
+.stepDate {
+    font-size: 0.76rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+/* Grid de Resumo */
+.summaryGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.summaryCard {
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 4px 12px rgba(12, 52, 71, 0.02);
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cardHeader h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0C3447;
+}
+
+.iconBlue { color: #2563eb; }
+.iconGreen { color: #5FC16C; }
+.iconOrange { color: #f59e0b; }
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.92rem;
+    color: #475569;
+}
+
+.cardContent p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.cardContent strong {
+    color: #0C3447;
+}
+
+.badgePagamento {
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.82rem;
+}
+
+.badgeEnvio {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.82rem;
+    font-family: monospace;
+}
+
+.noEnvio {
+    color: #94a3b8;
+    font-style: italic;
+}
+
+.totalDestaque {
+    font-size: 1.15rem;
+    color: #0C3447;
+    margin-top: 6px !important;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 10px;
+}
+
+.totalDestaque strong {
+    color: #5FC16C;
+}
+
+/* Status Badges */
+.statusBadge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    display: inline-block;
+}
+
+.statusPendente { background: #fffbeb; color: #d97706; }
+.statusPago { background: #e8f5e9; color: #2ecc71; }
+.statusCancelado { background: #fef2f2; color: #ef4444; }
+.statusEnviado { background: #e0f2fe; color: #0284c7; }
+.statusEntregue { background: #ecfdf5; color: #10b981; }
+
+/* Resumo Financeiro Grid */
+.financeiroGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.financialCard {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 20px;
+    padding: 24px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 4px 12px rgba(12, 52, 71, 0.02);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.financialCard::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+}
+
+.financialCard.bruto::before { background: #2563eb; }
+.financialCard.taxas::before { background: #ef4444; }
+.financialCard.liquido::before { background: #5FC16C; }
+
+.financialCard label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.financialValue {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #0C3447;
+    margin: 4px 0;
+}
+
+.financialCard.liquido .financialValue {
+    color: #5FC16C;
+}
+
+.financialSubtext {
+    font-size: 0.82rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+/* Seção de Itens */
+.itensSection h3 {
+    margin: 0 0 16px 0;
+    color: #0C3447;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.tableWrapper {
+    overflow-x: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    background: white;
+}
+
+.itensTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.itensTable th {
+    background: #f8fafc;
+    padding: 16px 20px;
+    color: #0C3447;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.itensTable td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    font-size: 0.92rem;
+    vertical-align: middle;
+}
+
+.itensTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.itemTitleArea {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 320px;
+}
+
+.itemTitle {
+    font-weight: 700;
+    color: #0C3447;
+    line-height: 1.4;
+}
+
+.itemMeliId {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.skuChip {
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-family: monospace;
+}
+
+.localName {
+    font-weight: 600;
+    color: #0C3447;
+}
+
+.noLocal {
+    color: #94a3b8;
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+.centered {
+    text-align: center;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.saleFee {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+/* Footer */
+.modalFooter {
+    padding: 24px 32px;
+    background: #f8fafc;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
+}
+
+.closeBtnFooter {
+    background: #0C3447;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.closeBtnFooter:hover {
+    background: #1a4a61;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(12, 52, 71, 0.2);
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .summaryGrid,
+    .financeiroGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}

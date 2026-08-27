@@ -1,0 +1,277 @@
+/* --- Variáveis CSS (Padrão Unificado) --- */
+:root {
+    --primary-color: #5FC16C; /* greenControlafacil */
+    --primary-hover-color: #4CAF5A; 
+    --dark-blue-grey: #0C3447; /* blueControlafacil */
+    --light-grey-bg: #f8f9fb; /* gelo */
+    --text-color-dark: #333;
+    --border-color: #e0e0e0;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --border-radius: 8px;
+
+    /* Cores de Status Padronizadas */
+    --color-ok: #2ecc71;
+    --color-baixo: #f1c40f;
+    --color-esgotado: #e74c3c;
+}
+
+/* --- Layout Principal --- */
+.container {
+    padding: calc(var(--topbar-height, 65px) + 40px) 40px 60px;
+    margin-left: var(--sidebar-width, 250px);
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, #f8fafc, #f1f5f9);
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.6s ease-out;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pageTitle {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #0C3447;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.03em;
+}
+
+/* --- Tabs de Navegação --- */
+.tabsContainer {
+    display: flex;
+    gap: 16px;
+    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 30px;
+}
+
+.tabBtn {
+    padding: 12px 24px;
+    background: none;
+    border: none;
+    color: #64748b;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    margin-bottom: -2px;
+}
+
+.tabBtn:hover {
+    color: #0C3447;
+}
+
+.activeTab {
+    color: #5FC16C;
+    border-bottom-color: #5FC16C;
+}
+
+.tabContent {
+    animation: fadeIn 0.4s ease;
+}
+
+/* --- Seção de Cards (Visão Geral) --- */
+.cardsSection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    justify-content: flex-start; /* Alinha à esquerda, fica melhor em dashboard */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    width: 100%;
+    max-width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 5px solid transparent; /* Cor de status será aplicada aqui */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: var(--dark-blue-grey);
+    font-size: 1.1em;
+}
+
+.card p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* Cores de status nos Cards */
+.card.ok {
+    border-left-color: var(--color-ok);
+}
+.card.baixo {
+    border-left-color: var(--color-baixo);
+}
+.card.esgotado {
+    border-left-color: var(--color-esgotado);
+}
+
+/* --- Seção de Tabela Detalhada --- */
+.stockTableSection {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    margin: 0;
+}
+
+.stockTableSection h3 {
+    margin-bottom: 20px;
+    color: var(--dark-blue-grey);
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.tableWrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px; /* Garante que a tabela não fique muito estreita */
+}
+
+thead th {
+    background-color: var(--light-grey-bg);
+    font-weight: 600;
+    color: var(--dark-blue-grey);
+    border-bottom: 2px solid var(--border-color);
+    text-transform: uppercase;
+    font-size: 0.85em;
+    padding: 12px 15px;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+tbody tr:hover {
+    background-color: #f7f7f7;
+}
+
+/* Centraliza colunas de números */
+.centered {
+    text-align: center;
+}
+
+/* Badges de Status na Tabela (Reutilizando o estilo do Dashboard) */
+.statusBadge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 700;
+    display: inline-block;
+    min-width: 65px;
+    text-align: center;
+}
+
+.statusBadge.ok {
+    background-color: rgba(46, 204, 113, 0.15); /* Verde com transparência */
+    color: var(--color-ok);
+}
+
+.statusBadge.baixo {
+    background-color: rgba(241, 196, 15, 0.15); /* Amarelo com transparência */
+    color: var(--color-baixo);
+}
+
+.statusBadge.medio {
+    background-color: rgba(243, 156, 18, 0.15); /* Laranja com transparência */
+    color: #f39c12;
+}
+
+.statusBadge.esgotado {
+    background-color: rgba(231, 76, 60, 0.15); /* Vermelho com transparência */
+    color: var(--color-esgotado);
+}
+
+/* Empty State */
+.emptyState {
+    background: white;
+    border-radius: 32px;
+    padding: 100px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    border: 2px dashed #e2e8f0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.emptyIcon {
+    width: 120px;
+    height: 120px;
+    background: #f8fafc;
+    color: #cbd5e1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.emptyState h2 { color: #0C3447; font-size: 1.8rem; font-weight: 800; margin: 0; }
+.emptyState p { color: #64748b; max-width: 450px; line-height: 1.7; font-size: 1.1rem; }
+
+.btnAdd {
+    background: #5FC16C;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 20px rgba(95, 193, 108, 0.2);
+}
+
+.btnAdd:hover {
+    transform: translateY(-3px);
+    background: #4caf5a;
+    box-shadow: 0 12px 28px rgba(95, 193, 108, 0.4);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .container { 
+        padding: 110px 20px 40px; 
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .pageTitle {
+        font-size: 1.5em;
+    }
+    .cardsSection {
+        gap: 15px;
+        justify-content: center;
+    }
+    .card {
+        max-width: 100%;
+    }
+    .stockTableSection {
+        padding: 15px;
+    }
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }

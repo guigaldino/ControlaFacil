@@ -1,0 +1,386 @@
+.pageContainer {
+    padding: calc(var(--topbar-height) + 40px) 40px 60px;
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, #f8fafc, #f1f5f9);
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.6s ease-out;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.mainTitle {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #0C3447;
+    margin: 0;
+    letter-spacing: -0.03em;
+}
+
+.subtitle {
+    color: #64748b;
+    margin-top: 8px;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.btnAdd {
+    background: #5FC16C;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 20px rgba(95, 193, 108, 0.2);
+}
+
+.btnAdd:hover {
+    transform: translateY(-3px);
+    background: #4caf5a;
+    box-shadow: 0 12px 28px rgba(95, 193, 108, 0.4);
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 28px;
+    padding: 30px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 10px 30px rgba(12, 52, 71, 0.04);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(12, 52, 71, 0.1);
+    border-color: #d1d5db;
+}
+
+.cardTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.brandInfo {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.logoBox {
+    width: 64px;
+    height: 64px;
+    background: #f1f5f9;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border: 1px solid #e2e8f0;
+}
+
+.logoBox img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    padding: 4px;
+}
+
+.brandInfo h3 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.typeTag {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+/* Badges */
+.statusBadge {
+    padding: 8px 14px;
+    border-radius: 24px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.02em;
+}
+
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+
+.statusAtivo { background: #f0fdf4; color: #16a34a; }
+.statusAtivo .dot { background: #16a34a; box-shadow: 0 0 8px rgba(22, 163, 74, 0.5); }
+
+.statusPendente { background: #fffbeb; color: #d97706; }
+.statusPendente .dot { background: #d97706; box-shadow: 0 0 8px rgba(217, 119, 6, 0.5); }
+
+.statusErro { background: #fef2f2; color: #dc2626; }
+.statusErro .dot { background: #dc2626; box-shadow: 0 0 8px rgba(220, 38, 38, 0.5); }
+
+/* Actions */
+.cardActions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.actionBtn {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 10px;
+    border-radius: 16px;
+}
+
+.actionBtn:hover {
+    background: #f8fafc;
+    color: #0C3447;
+}
+
+.btnDelete:hover {
+    background: #fef2f2;
+    color: #ef4444;
+}
+
+/* Empty State */
+.emptyState {
+    background: white;
+    border-radius: 32px;
+    padding: 100px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    border: 2px dashed #e2e8f0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.emptyIcon {
+    width: 120px;
+    height: 120px;
+    background: #f8fafc;
+    color: #cbd5e1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.emptyState h2 { color: #0C3447; font-size: 1.8rem; font-weight: 800; margin: 0; }
+.emptyState p { color: #64748b; max-width: 450px; line-height: 1.7; font-size: 1.1rem; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 1024px) {
+    .pageContainer { 
+        padding: 110px 20px 40px; 
+        margin-left: 0;
+    }
+    .header { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .btnAdd { width: 100%; justify-content: center; }
+    .grid { grid-template-columns: 1fr; }
+}
+
+/* Modal Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(12, 52, 71, 0.4);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.modalContainer {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 28px;
+    box-shadow: 0 25px 70px rgba(12, 52, 71, 0.2);
+    overflow: hidden;
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modalHeader {
+    padding: 24px 32px;
+    background: #f8fafc;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalHeader h2 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0C3447;
+    margin: 0;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s;
+    display: flex;
+}
+
+.closeBtn:hover { background: #f1f5f9; color: #0C3447; }
+
+.modalBody {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inputGroup label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.inputGroup select, .inputGroup input {
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    font-size: 1rem;
+    color: #0C3447;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.inputGroup input:focus {
+    outline: none;
+    border-color: #5FC16C;
+    box-shadow: 0 0 0 4px rgba(95, 193, 108, 0.1);
+    background: white;
+}
+
+.modalFooter {
+    padding: 24px 32px;
+    background: #f8fafc;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btnCancel {
+    background: none;
+    border: 1px solid #e2e8f0;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btnCancel:hover { background: #f1f5f9; color: #0C3447; }
+
+.btnSubmit {
+    background: #0C3447;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btnSubmit:hover:not(:disabled) {
+    background: #1a4a61;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(12, 52, 71, 0.2);
+}
+
+.btnSubmit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Loading State */
+.loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    gap: 20px;
+    color: #64748b;
+    animation: fadeIn 0.5s ease;
+}
+
+.spin {
+    animation: rotate 2s linear infinite;
+    color: #0C3447;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
